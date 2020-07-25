@@ -22,4 +22,13 @@ router.post('/', async function (req, res) {
     res.json(tarea);
 });
 
+router.delete('/:id', async (req, res) => {
+
+    const message = await Tarea
+        .destroy({ where: { id: req.params.id } })
+        .then(() => 'List deleted');
+
+    res.json({ message });
+});
+
 module.exports = router;
