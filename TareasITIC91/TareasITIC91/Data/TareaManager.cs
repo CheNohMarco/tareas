@@ -36,5 +36,12 @@ namespace TareasITIC91.Data
             return JsonConvert.DeserializeObject<Tarea>(
                 await response.Content.ReadAsStringAsync());
         }
+
+        public async Task Delete(string Id)
+        {
+            HttpClient client = new HttpClient();
+
+            var response = await client.DeleteAsync(url + Id);
+        }
     }
 }
