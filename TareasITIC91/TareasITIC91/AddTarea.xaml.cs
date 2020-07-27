@@ -13,7 +13,6 @@ namespace TareasITIC91
     public partial class AddTarea : ContentPage
     {
         private TareaManager manager;
-        private Date  fecha;
         
         public AddTarea(TareaManager manager)
         {
@@ -23,17 +22,7 @@ namespace TareasITIC91
 
         public async void OnSaveTarea(object sender, EventArgs e)
         {
-            await manager.Add(txtTitulo.Text , txtDetalle.Text, fecha, txtAsignado.Text);
+            await manager.Add(txtTitulo.Text , txtDetalle.Text, pickFecha.Date, txtAsignado.Text);
         }
-
-        private void pickFecha_DateSelected(object sender, DateChangedEventArgs e)
-        {
-            fecha = new Date();
-            fecha.Anio = (ushort)e.NewDate.Year;
-            fecha.Mes = (byte)e.NewDate.Month;
-            fecha.Dia = (byte)e.NewDate.Day;
-
-        }
-
     }
 }
