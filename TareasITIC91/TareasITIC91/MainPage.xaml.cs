@@ -25,7 +25,7 @@ namespace TareasITIC91
             Refresh();
         }
 
-        async void OnRefresh(object sender, EventArgs e)
+         void OnRefresh(object sender, EventArgs e)
         {
             Refresh();
         }

@@ -10,6 +10,18 @@
             <Label Text="Nueva tarea" FontSize="Title" />
             <Entry x:Name="txtTitulo" Placeholder="Título" />
             <Entry x:Name="txtDetalle" Placeholder="Detalle"/>
+            <DatePicker Format="D"  x:Name="pickFecha"
+            Date="{Binding SelectedDate}" />
+            <Picker x:Name="selecGroup"
+            Title="Selecciona un grupo"
+            TitleColor="Red">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>ITIC91</x:String>
+                        <x:String>ITIC92</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
             <Button Text="Guardar" x:Name="btnGuardar" Clicked="OnSaveTarea" />
         </StackLayout>
     </ContentPage.Content>

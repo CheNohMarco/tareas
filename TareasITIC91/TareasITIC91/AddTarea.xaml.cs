@@ -13,6 +13,7 @@ namespace TareasITIC91
     public partial class AddTarea : ContentPage
     {
         private TareaManager manager;
+        
         public AddTarea(TareaManager manager)
         {
             InitializeComponent();
@@ -21,7 +22,8 @@ namespace TareasITIC91
 
         public async void OnSaveTarea(object sender, EventArgs e)
         {
-            await manager.Add(txtTitulo.Text, txtDetalle.Text);
+            await manager.Add(txtTitulo.Text , txtDetalle.Text, pickFecha.Date );
         }
+
     }
 }

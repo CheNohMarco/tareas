@@ -17,6 +17,9 @@ const Tarea = sequelize.define('Tarea', {
     },
     detalle: {
         type: Sequelize.STRING
+    },
+    fecha: {
+        type: DataTypes.DATEONLY
     }
 });
 
