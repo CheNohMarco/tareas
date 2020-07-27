@@ -40,7 +40,25 @@ namespace TareasITIC91.Data
                 await response.Content.ReadAsStringAsync());
         }
 
+        public async Task<Tarea> Update(string titulo, string detalle, DateTime fecha, string asignado, string id)
+        {
+            Tarea tarea = new Tarea()
+            {
+                Titulo = titulo,
+                Detalle = detalle,
+                Fecha = fecha,
+                Asignado = asignado
+            };
 
+            HttpClient client = new HttpClient();
+
+            var response = await client.PutAsync(url + id, new StringContent(
+                    JsonConvert.SerializeObject(tarea),
+                    Encoding.UTF8, "application/json"));
+
+            return JsonConvert.DeserializeObject<Tarea>(
+                await response.Content.ReadAsStringAsync());
+        }
         public async Task Delete(string Id)
         {
             HttpClient client = new HttpClient();

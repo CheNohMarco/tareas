@@ -47,6 +47,12 @@ namespace TareasITIC91
             await Navigation.PushModalAsync(new AddTarea(manager));
         }
 
+        async private void OnEdit(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+            await Navigation.PushModalAsync(new UpdateTarea(manager, mi.CommandParameter.ToString()));
+        }
+
         async private void OnDelete(object sender, EventArgs e)
         {
             var mi = ((MenuItem)sender);
