@@ -23,7 +23,7 @@ namespace TareasITIC91
 
         public async void OnSaveTarea(object sender, EventArgs e)
         {
-            await manager.Add(txtTitulo.Text , txtDetalle.Text, fecha  );
+            await manager.Add(txtTitulo.Text , txtDetalle.Text, fecha, txtAsignado.Text);
         }
 
         private void pickFecha_DateSelected(object sender, DateChangedEventArgs e)
@@ -34,5 +34,6 @@ namespace TareasITIC91
             fecha.Dia = (byte)e.NewDate.Day;
 
         }
+
     }
 }

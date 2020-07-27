@@ -34,12 +34,16 @@ router.delete('/:id', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
+    console.log(req.body);
+    var t = req.body;
+    const message = await Tarea.findByPk(req.params.id)
+        .then(tarea => {
+            tarea.update(t);
+            tarea.save();
+            'List updated'
+        });
 
-    const message = await Tarea
-        .update(req.body, { where: { id: req.params.id } })
-        .then(() => 'List updated');
-
-    res.json({ message });
+    res.json({ t });
 
 });
 

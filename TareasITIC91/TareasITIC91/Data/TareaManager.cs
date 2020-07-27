@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace TareasITIC91.Data
 {
@@ -18,13 +19,14 @@ namespace TareasITIC91.Data
             return JsonConvert.DeserializeObject<IEnumerable<Tarea>>(result);
         }
 
-        public async Task<Tarea> Add(string titulo, string detalle, Date fecha)
+        public async Task<Tarea> Add(string titulo, string detalle, Date fecha, String asignado)
         {
             Tarea tarea = new Tarea()
             {
                 Titulo = titulo,
                 Detalle = detalle, 
                 Fecha = fecha,
+                Asignado = asignado
             };
 
             HttpClient client = new HttpClient();
@@ -37,6 +39,7 @@ namespace TareasITIC91.Data
             return JsonConvert.DeserializeObject<Tarea>(
                 await response.Content.ReadAsStringAsync());
         }
+
 
         public async Task Delete(string Id)
         {

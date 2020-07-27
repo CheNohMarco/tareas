@@ -10,6 +10,7 @@ namespace TareasITIC91.Data
         public string Titulo { get; set; }
         public string Detalle { get; set; }
         public Date Fecha { get; set; }
+        public String Asignado { get; set; }
 
         
     }
