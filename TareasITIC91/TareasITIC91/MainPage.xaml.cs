@@ -46,5 +46,13 @@ namespace TareasITIC91
         {
             await Navigation.PushModalAsync(new AddTarea(manager));
         }
+
+        async private void OnDelete(object sender, EventArgs e)
+        {
+            var mi = ((MenuItem)sender);
+
+            await manager.Delete(mi.CommandParameter.ToString());
+
+        }
     }
 }

@@ -16,7 +16,7 @@
             <DataTemplate>
                 <TextCell Text="{Binding Titulo }" Detail="{Binding Fecha }">
                     <TextCell.ContextActions>
-                        <MenuItem Text="Eliminar" IsDestructive="True" CommandParameter="{Binding}" />
+                        <MenuItem Clicked="OnDelete" Text="Eliminar" IsDestructive="True" CommandParameter="{Binding Id}" />
                     </TextCell.ContextActions>
                 </TextCell>
             </DataTemplate>

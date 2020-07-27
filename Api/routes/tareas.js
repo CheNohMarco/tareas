@@ -32,4 +32,14 @@ router.delete('/:id', async (req, res) => {
     res.json({ message });
 });
 
+router.put('/:id', async (req, res) => {
+
+    const message = await Tarea
+        .update(req.body, { where: { id: req.params.id } })
+        .then(() => 'List updated');
+
+    res.json({ message });
+
+});
+
 module.exports = router;
