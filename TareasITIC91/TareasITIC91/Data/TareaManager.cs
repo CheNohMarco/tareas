@@ -18,7 +18,7 @@ namespace TareasITIC91.Data
             return JsonConvert.DeserializeObject<IEnumerable<Tarea>>(result);
         }
 
-        public async Task<Tarea> Add(string titulo, string detalle, DateTime fecha)
+        public async Task<Tarea> Add(string titulo, string detalle, Date fecha)
         {
             Tarea tarea = new Tarea()
             {

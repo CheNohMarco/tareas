@@ -12,12 +12,13 @@ router.get('/', async function (req, res) {
 
 router.post('/', async function (req, res) {
 
-    let { Titulo, Detalle, Fecha } = req.body;
+    let { Titulo, Detalle, Fecha, Asignado } = req.body;
 
     let tarea = await Tarea.create({
         titulo: Titulo,
         detalle: Detalle,
-        fecha: Fecha
+        fecha: Fecha,
+        asignado: Asignado
     });
 
     res.json(tarea);

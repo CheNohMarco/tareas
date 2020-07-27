@@ -14,7 +14,7 @@
     <ListView ItemsSource="{Binding}">
         <ListView.ItemTemplate>
             <DataTemplate>
-                <TextCell Text="{Binding Titulo }" Detail="{Binding Fecha }">
+                <TextCell Text="{Binding Titulo }" Detail="{Binding Fecha.Converter }">
                     <TextCell.ContextActions>
                         <MenuItem Clicked="OnDelete" Text="Eliminar" IsDestructive="True" CommandParameter="{Binding Id}" />
                     </TextCell.ContextActions>

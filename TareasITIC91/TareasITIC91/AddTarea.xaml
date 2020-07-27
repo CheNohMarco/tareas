@@ -10,7 +10,7 @@
             <Label Text="Nueva tarea" FontSize="Title" />
             <Entry x:Name="txtTitulo" Placeholder="Título" />
             <Entry x:Name="txtDetalle" Placeholder="Detalle"/>
-            <DatePicker Format="D"  x:Name="pickFecha"
+            <DatePicker Format="D" DateSelected="pickFecha_DateSelected" x:Name="pickFecha"
             Date="{Binding SelectedDate}" />
             <Picker x:Name="selecGroup"
             Title="Selecciona un grupo"
