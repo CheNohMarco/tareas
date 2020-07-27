@@ -10,7 +10,7 @@ namespace TareasITIC91.Data
 {
     public class TareaManager
     {
-        const string url = "http://192.168.100.4:3000/tareas/";
+        const string url = "http://192.168.100.10:3000/tareas/";
 
         public async Task<IEnumerable<Tarea>> GetAll()
         {
@@ -19,7 +19,7 @@ namespace TareasITIC91.Data
             return JsonConvert.DeserializeObject<IEnumerable<Tarea>>(result);
         }
 
-        public async Task<Tarea> Add(string titulo, string detalle, DateTime fecha, String asignado)
+        public async Task<Tarea> Add(string titulo, string detalle, Date fecha, String asignado)
         {
             Tarea tarea = new Tarea()
             {

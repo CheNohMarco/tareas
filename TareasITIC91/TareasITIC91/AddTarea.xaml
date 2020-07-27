@@ -11,7 +11,7 @@
             <Entry x:Name="txtTitulo" Placeholder="Título" />
             <Entry x:Name="txtDetalle" Placeholder="Detalle"/>
             <Entry x:Name="txtAsignado" Placeholder="Asignado a:"/>
-            <DatePicker Format="D" x:Name="pickFecha"
+            <DatePicker Format="D" DateSelected="pickFecha_DateSelected" x:Name="pickFecha"
             Date="{Binding SelectedDate}" />
             <Button Text="Guardar" x:Name="btnGuardar" Clicked="OnSaveTarea" />
         </StackLayout>
